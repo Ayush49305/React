@@ -1,15 +1,8 @@
 @import "tailwindcss";
 
-* {
-    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue';
-}
-
-html,
 body {
+    margin: 0;
+    background-color: black;
     height: 100%;
     width: 100%;
 }
