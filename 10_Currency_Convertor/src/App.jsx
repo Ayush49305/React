@@ -1,90 +1,109 @@
-import React from 'react'
+import React, { useState } from 'react'
+import InputBox from './components/InputBox'
+import useCurrencyInfo from './hooks/useCurrencyInfo'
+import 'remixicon/fonts/remixicon.css'
+
 
 const App = () => {
-  return (
-    <div className='w-full h-screen flex justify-center items-center'>
-      <div className='w-full h-screen bg-cover bg-center flex justify-center items-center'
-        style={{backgroundImage:"url(https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"}}>
 
-      <div className='w-full max-w-md mx-auto border border-gray-500 rounded-2xl bg-white/20                backdrop-blur-sm p-5'>
+  const [amount,setAmount]=useState(0)
+  const [from,setFrom]=useState("usd")
+  const [to,setTo]=useState("inr")
+  const [convertedAmount,setConvertedAmount]=useState(0)
+  const [isConverted,setIsConverted]=useState(false)
 
-      <div className='w-full mb-1'>
-        <div className='w-full bg-white p-4 rounded-lg'>
-          <div className='flex justify-between items-center'>
-            <label className='text-gray-500 text-sm'>
-              From
-            </label>
+  const currencyInfo=useCurrencyInfo(from)
 
-            <p className='text-gray-500 text-sm'>
-              currency Type
-            </p>
+  const options=Object.keys(currencyInfo)
 
-          </div>
+  const swap=()=>{
+    setFrom(to)
+    setTo(from)
+    setConvertedAmount(amount)
+    setAmount(convertedAmount)
+  }
 
-          <div className='flex justify-between items-center mt-4'>
-            <input 
-              type="number"
-              placeholder='0'
-              className='outline-none text-2xl font-medium w-1/2 bg-transparent'
+  const convert=()=>{
+    setConvertedAmount(amount*currencyInfo[to])
+    setIsConverted(true)
+  }
 
-            />
+  return (  
+        <div
+            className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+            style={{backgroundImage:"url(https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"}}
+        >
 
-            <select className="bg-gray-100 rounded-lg px-3 py-2 outline-none">
-                <option>USD</option>
-                <option>INR</option>
-                <option>EUR</option>
-            </select>
-          </div>
+
+            <div className="w-full">
+                <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            convert()
+
+                        }}
+                    >
+                        <div className="w-full mb-1">
+                            <InputBox
+                                label="From"
+                                amount={amount}
+                                currencyOptions={options}
+                                selectCurrency={from}
+                                onCurrencyChange={(currency) => {
+                                   setFrom(currency)
+                                   setIsConverted(false)
+                                  }}
+                                
+                                onAmountChange={(amount) => {
+                                  setAmount(amount);
+                                  setIsConverted(false);
+                                }}
+                            />
+                        </div>
+                        <div className="relative w-full h-0.5">
+                            <button
+                                
+                                className={`absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5 transition-all duration-300 ${isConverted ? "bg-blue-600":"hover:bg-blue-800"}`}
+                                
+                                onClick={swap}
+                            >
+                              
+                                swap
+                                <i class="ri-arrow-up-down-line"></i>
+                            </button>
+                        </div>
+                        <div className="w-full mt-1 mb-4">
+                            <InputBox
+                                label="To"
+                                amount={convertedAmount}
+                                currencyOptions={options}
+                                selectCurrency={to}
+                                onCurrencyChange={(currency) => {
+                                   setTo(currency)
+                                   setIsConverted(false)
+                                }}
+                                
+                                
+                            />
+                        </div>
+                        <button 
+                          type="submit" 
+                          className={`w-full text-white bg-blue-600 px-4 py-3 rounded-lg transition-all duration-300 ${isConverted ?    "bg-blue-600":"hover:bg-blue-800"
+
+                          }`}
+                        >
+                            Convert {from.toUpperCase()} to {to.toUpperCase()}
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div className='relative-w-full h-0.5'>
-
-      </div>
-
-      <div className='w-full mt-1 mb-4'>
-        <div className='w-full bg-white p-4 rounded-lg'>
-          <div className='flex justify-between items-center'>
-            <label className='text-gray-500 text-sm'>
-              To
-            </label>
-
-            <p className='text-gray-500 text-sm'>
-              currency Type
-            </p>
-
-          </div>
-
-          <div className='flex justify-between items-center mt-4'>
-            <input 
-              type="number"
-              placeholder='0'
-              className='outline-none text-2xl font-medium w-1/2 bg-transparent'
-
-            />
-
-            <select className="bg-gray-100 rounded-lg px-3 py-2 outline-none">
-                <option>USD</option>
-                <option>INR</option>
-                <option>EUR</option>
-            </select>
-          </div>
-        </div>
-
-      </div>
-
-      <button>Convert
-
-      </button>
-
-
-
-    </div>
-    </div>
-  </div>
-    
-  )
+  );
 }
 
 export default App
 
+    
+
+  
