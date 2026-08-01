@@ -1,18 +1,15 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import userContext from '../contexts/userContext'
 
-const Navbar = () => {
+const Footer = () => {
   const {user,age,count}=useContext(userContext)
   return (
-    <div className='bg-red-500 text-4xl'>
+    <div className='h-[27.5] w-screen bg-amber-300'>
       <h2>Name:{user}</h2>
       <p>Age:{age}</p>
       <p>Count:{count}</p>
-      
     </div>
   )
-
 }
 
-export default Navbar
+export default Footer

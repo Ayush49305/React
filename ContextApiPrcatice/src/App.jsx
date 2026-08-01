@@ -1,23 +1,21 @@
 import React, { useState } from 'react'
 import userContext from './contexts/userContext'
 import Navbar from './components/Navbar'
-import Profile from './components/Profile'
+import Home from './components/Home'
+import Footer from './components/Footer'
 const App = () => {
 
   const [user,setUser]=useState("Guest")
+  const [age,setAge]=useState(0)
+  const [count,setCount]=useState(0)
 
   return (
     <div className="h-full w-screen">
-    <userContext.Provider value={{user,setUser}}>
+    <userContext.Provider value={{user,setUser,age,setAge,count,setCount}}>
         <Navbar/>
-        <Profile/>
-        <div className='flex justify-center items-center'>
-          <button className='bg-blue-600 px-8'
-          onClick={()=>setUser("Ayush")}
-          >Login
-            
-          </button>
-        </div>
+       <Home/>
+       <Footer/>
+        
         
       </userContext.Provider>
     </div>
