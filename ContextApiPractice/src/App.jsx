@@ -8,13 +8,15 @@ const App = () => {
   const [user,setUser]=useState("Guest")
   const [age,setAge]=useState(0)
   const [count,setCount]=useState(0)
+  const [bgColor,setBgColor]=useState("white")
+  const [textColor,setTextColor]=useState("black")
 
   return (
     <div className="h-full w-screen">
-    <userContext.Provider value={{user,setUser,age,setAge,count,setCount}}>
+      <userContext.Provider value={{user,setUser,age,setAge,count,setCount,bgColor,setBgColor,textColor,setTextColor}}>
         <Navbar/>
-       <Home/>
-       <Footer/>
+        <Home/>
+        <Footer/>
         
         
       </userContext.Provider>
