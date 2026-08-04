@@ -1,13 +1,16 @@
-import React from 'react'
+import { useState } from 'react'
+
+import './App.css'
 import AddTodo from './components/AddTodo'
 import Todos from './components/Todos'
 
-const App = () => {
+function App() {
+  
   return (
     <>
-    <h1>This is redux toolkit</h1>
-    <AddTodo/>
-    <Todos/>
+      
+      <AddTodo />
+      <Todos />
     </>
   )
 }
