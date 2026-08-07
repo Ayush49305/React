@@ -25,7 +25,7 @@ const Sidebar = () => {
 
       <div className='flex items-center gap-2'>
         <i className="ri-booklet-line text-2xl bg-blue-700 h-10 max-w-1 pl-5 pr-5 flex justify-center items-center outline-none rounded-lg"></i>
-        <h2 className='text-2xl text-blue-800'>Notes App</h2>
+        <h2 className='text-2xl text-blue-800'>Categories</h2>
       </div>
 
     </div>
