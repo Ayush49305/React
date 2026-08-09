@@ -20,6 +20,8 @@ const Navbar = () => {
           <i className="ri-gallery-view-2 border border-gray-500 h-10 max-w-1 pl-6 pr-6 flex justify-center items-center outline-none rounded-lg"></i>
         
       </div>
+
+      
     </div>
   )
 }
