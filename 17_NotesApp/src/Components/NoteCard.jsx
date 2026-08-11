@@ -1,40 +1,34 @@
 import React from 'react'
+import Home from './Home'
 
-const NoteCard = () => {
+const NoteCard = ({title,content,category,date}) => {
   return (
-    <div className="">
-
-      {/* Top */}
-      <div className="flex justify-between items-center">
-        <i className="ri-pushpin-fill"></i>
-
-        <i className="ri-more-2-fill"></i>
+    <div className='bg-violet-50 h-70 w-60 p-4 m-6 rounded-2xl'>
+      <div className='flex justify-between mb-2'>
+         <i className="ri-pushpin-2-fill text-2xl"></i>
+         <i className="ri-more-2-line font-bold text-1xl"></i>
       </div>
 
-      {/* Title */}
-      <h2>
-        React Project Ideas
-      </h2>
+      <h2 className="text-xl">{title}</h2>
 
-      {/* Content */}
-      <ul>
-        <li>Notes App</li>
-        <li>Expense Tracker</li>
-        <li>Weather Dashboard</li>
-        <li>E-commerce Store</li>
+      <ul className="text-sm space-y-1 text-gray-700 mt-2 font-medium">
+        {content.map((item,index)=>(
+          <li key={index}>*{item}</li>
+        ))}
       </ul>
 
-      {/* Bottom */}
-      <div>
-        <span>Ideas</span>
+      <span className='inline-block bg-violet-200 text-violet-600 mt-3 px-2 py-1 rounded-full'>{category}</span>
 
-        <p>
-          May 30, 2024 • 10:30 AM
-        </p>
-      </div>
+      <p className='text-xs mt-4 text-gray-500'>
+       {date}
+      </p>
+
 
     </div>
-  );
-};
+  )
+}
 
-export default NoteCard;
+export default NoteCard
+
+
+

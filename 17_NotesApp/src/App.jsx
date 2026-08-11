@@ -8,8 +8,10 @@ const App = () => {
   return (
     <div>
       <Navbar/>
-      <Sidebar/>
-      <NoteCard/>
+      <div className='flex bg-white'>
+        <Sidebar/>
+        <NoteCard/>
+      </div>
     </div>
   )
 }

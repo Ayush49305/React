@@ -3,7 +3,7 @@ import 'remixicon/fonts/remixicon.css'
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between items-center h-[90px] w-screen bg-amber-950 border-black'>
+    <div className='flex justify-between items-center h-[90px] w-screen bg-white border-black'>
       <div className='pl-5'>
         <h2 className='text-4xl'>All Notes</h2>  
         <p className='mt-1'>12 notes</p>

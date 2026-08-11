@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div className='bg-white h-[calc(100vh-90px)] w-[240px] p-3 '>
+    <div className='bg-white h-[calc(100vh-90px)] w-[300px] p-3 '>
       <div className='flex items-center gap-2 mb-4'>
         <i className="ri-booklet-line text-2xl bg-violet-600 h-10 max-w-1 pl-5 pr-5 flex justify-center items-center outline-none rounded-lg"></i>
         <h2 className='text-xl font-semibold text-gray-800'>Notes App</h2>
@@ -61,7 +61,7 @@ const Sidebar = () => {
           <span className='text-sm font-medium text-black'>Personal</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>4</span>
+        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>1</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
@@ -70,7 +70,7 @@ const Sidebar = () => {
           <span className='text-sm font-medium text-black'>Work</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>4</span>
+        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>3</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
