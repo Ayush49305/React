@@ -5,6 +5,11 @@ const Navbar = () => {
   return (
     <div className='flex justify-between items-center h-[90px] w-screen bg-white border-black'>
       <div className='pl-5'>
+        <h2 className='text-4xl'>Welcome,Ayush</h2>  
+        {/* <p className='mt-1'>12 notes</p> */}
+
+      </div>
+      <div className='pr-120 mt-7'>
         <h2 className='text-4xl'>All Notes</h2>  
         <p className='mt-1'>12 notes</p>
       </div>

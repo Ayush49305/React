@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar'
-import NoteCard from './Components/NoteCard'
+import Home from './Components/Home'
+// import NoteCard from './components/NoteCard'
+
 
 
 const App = () => {
@@ -10,7 +12,7 @@ const App = () => {
       <Navbar/>
       <div className='flex bg-white'>
         <Sidebar/>
-        <NoteCard/>
+        <Home/>
       </div>
     </div>
   )

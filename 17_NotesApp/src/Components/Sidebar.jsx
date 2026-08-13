@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Sidebar = () => {
+
+  const[notes,setNotes]=useState(initialNotes)
+  
   return (
     <div className='bg-white h-[calc(100vh-90px)] w-[300px] p-3 '>
       <div className='flex items-center gap-2 mb-4'>
@@ -8,9 +11,12 @@ const Sidebar = () => {
         <h2 className='text-xl font-semibold text-gray-800'>Notes App</h2>
       </div>
       
-      <button className="w-full h-10 bg-gradient-to-r from-violet-600 to-purple-500 text-white rounded-lg flex items-center             justify-center gap-2 mb-5">
+      <button className="w-full h-10 bg-gradient-to-r from-violet-600 to-purple-500 text-white rounded-lg flex items-center             justify-center gap-2 mb-5">       
         <i className="ri-add-line text-xl"></i>
         <span className="text-sm font-medium">New Note</span>
+
+        onclick={()=>setShowForm(true)
+        }
       </button>
 
       <div className="flex items-center justify-between bg-violet-50 rounded-lg px-3 h-10 mb-1">
@@ -122,7 +128,7 @@ const Sidebar = () => {
         <div className=" flex justify-center items-center bg-violet-500 w-8 h-8 rounded-full shadow-2xl">A
         </div>
         <span className="pr-4">Ayush Raj</span>
-        <i class="ri-arrow-down-s-line"></i>
+        <i className="ri-arrow-down-s-line"></i>
       </div>
 
     </div>
