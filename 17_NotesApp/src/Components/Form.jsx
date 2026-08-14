@@ -4,6 +4,7 @@ const Form = () => {
 
     const[title,setTitle]=useState("")
     const[content,setContent]=useState("")
+    const[category,setCategory]=useState("")
   return (
     <div>
         <input 

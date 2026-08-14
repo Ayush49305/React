@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import NoteCard from './NoteCard'
+import Form from './Form'
 
 const Home = () => {
 
-  const [showForm,setShowForm]=useState("")
+  
   const [title,setTitle]=useState("")
   const [content,setContent]=useState("")
   const [category,setCategory]=useState("")
