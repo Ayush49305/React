@@ -25,9 +25,9 @@ const Form = () => {
             placeholder='category'
         />
             
-        <button
-        onClick={handleAddNote}
-        >Add Note</button>
+        <button>
+  Add Note
+</button>
       
     </div>
   )

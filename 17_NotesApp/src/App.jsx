@@ -13,7 +13,7 @@ const App = () => {
       <Navbar/>
       <div className='flex bg-white'>
         <Sidebar setShowForm={setShowForm}/>
-        <Home/>
+        <Home showForm={showForm} setShowForm={setShowForm}/>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import NoteCard from './NoteCard'
 import Form from './Form'
 
-const Home = () => {
+const Home = ({showForm,setShowForm}) => {
 
   
   const [title,setTitle]=useState("")
@@ -111,6 +111,7 @@ const Home = () => {
   ])
   return (
     <div className='flex-1 grid bg-white p-5'>
+      {showForm && <Form />}
       <div className='grid grid-cols-4 p-4'>
         {notes.map((note,index)=>(
           <NoteCard
