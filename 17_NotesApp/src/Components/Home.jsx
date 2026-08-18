@@ -2,7 +2,12 @@ import React, { useState } from 'react'
 import NoteCard from './NoteCard'
 import Form from './Form'
 
-const Home = ({showForm,setShowForm}) => {
+const Home = ({
+  showForm,
+  setShowForm,
+  darkMode,
+  setDarkMode
+}) => {
 
   
   const [title,setTitle]=useState("")
@@ -109,17 +114,52 @@ const Home = ({showForm,setShowForm}) => {
   },
 
   ])
+
+  const handleAddNote = () => {
+    if (!title.trim() || !content.trim() || !category.trim()) {
+    alert("Please fill all fields")
+    return
+  }
+
+  const newNote = {
+    title: title,
+    content: content.split("\n").filter(item => item.trim() !== ""),
+    category: category,
+    date: new Date().toLocaleString()
+  }
+
+  setNotes([newNote, ...notes])
+
+  setTitle("")
+  setContent("")
+  setCategory("")
+
+  setShowForm(false)
+}
   return (
-    <div className='flex-1 grid bg-white p-5'>
-      {showForm && <Form />}
+    <div className={`flex-1 grid p-5 ${darkMode ? "bg-gray-700 text-white ":"bg-white text-black "}`}>
+      {showForm && (
+        <Form
+          
+          title={title}
+          setTitle={setTitle}
+          content={content}
+          setContent={setContent}
+          category={category}
+          setCategory={setCategory}
+          handleAddNote={handleAddNote}
+        />
+      )}
       <div className='grid grid-cols-4 p-4'>
         {notes.map((note,index)=>(
           <NoteCard
-          key={index}
-          title={note.title}
-          content={note.content}
-          category={note.category}
-          date={note.date}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            key={index}
+            title={note.title}
+            content={note.content}
+            category={note.category}
+            date={note.date}
           />
         ))}
       </div>

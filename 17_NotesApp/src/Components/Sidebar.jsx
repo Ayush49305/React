@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 
-const Sidebar = ({setShowForm}) => {
+const Sidebar = ({
+  setShowForm,
+  darkMode,
+  setDarkMode
+}) => {
 
-  // const[notes,setNotes]=useState(initialNotes)
+  //const[color,setColor]=useState("white")
   
   return (
-    <div className='bg-white h-[calc(100vh-90px)] w-[300px] p-3 '>
+    <div className={`h-[calc(100vh-90px)] w-[300px] p-3 ${darkMode ? "bg-gray-700 text-white min-h-screen":"bg-white text-black min-h-screen"}`}>
       <div className='flex items-center gap-2 mb-4'>
         <i className="ri-booklet-line text-2xl bg-violet-600 h-10 max-w-1 pl-5 pr-5 flex justify-center items-center outline-none rounded-lg"></i>
         <h2 className='text-xl font-semibold text-gray-800'>Notes App</h2>
@@ -43,7 +47,7 @@ const Sidebar = ({setShowForm}) => {
           <span className='text-sm font-medium text-violet-600'>Pinned</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>5</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>5</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10 mb-1'>
@@ -52,7 +56,7 @@ const Sidebar = ({setShowForm}) => {
           <span className='text-sm font-medium text-violet-600'>Trash</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>1</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>1</span>
       </div>
 
       <div className="flex justify-between items-center rounded-lg h-8 px-3">
@@ -62,13 +66,13 @@ const Sidebar = ({setShowForm}) => {
         
       </div>
 
-      <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
+      <div className={`flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10 ${darkMode ? "text-white":"text-black"}`}>
         <div className='flex items-center gap-3'>
           <i className="ri-user-line text-xl text-black"></i>
           <span className='text-sm font-medium text-black'>Personal</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>1</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>1</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
@@ -77,7 +81,7 @@ const Sidebar = ({setShowForm}) => {
           <span className='text-sm font-medium text-black'>Work</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>3</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>3</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
@@ -86,7 +90,7 @@ const Sidebar = ({setShowForm}) => {
           <span className='text-sm font-medium text-black'>Study</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>4</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>4</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
@@ -95,7 +99,7 @@ const Sidebar = ({setShowForm}) => {
           <span className='text-sm font-medium text-black'>ideas</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>2</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>2</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10 mb-10'>
@@ -104,7 +108,7 @@ const Sidebar = ({setShowForm}) => {
           <span className='text-sm font-medium text-black'>Others</span>
         </div>
 
-        <span className='bg-violet-50 text-voilet-600 text-xs font-semibold rounded-full px-2 py-1'>1</span>
+        <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>1</span>
       </div>
 
 
@@ -114,13 +118,15 @@ const Sidebar = ({setShowForm}) => {
         <div className="flex items-center gap-3">
           <i className="ri-moon-line text-xl text-black-600"></i>
 
-          <span className="text-sm font-medium text-black">
+          <span className="text-sm font-medium text-black" >
             Dark Mode
           </span>
         </div>
 
-        <div className="w-11 h-6 bg-gray-300 rounded-full   p-1">
-          <div className="w-4 h-4 bg-white rounded-full shadow-2xl"></div>
+        <div 
+          onClick={()=>setDarkMode(!darkMode)}
+          className={`w-11 h-6 bg-gray-300 rounded-full p-1 ${darkMode ? "bg-violet-500":"bg-gray-700"}`}>
+          <div className={`w-4 h-4 bg-white rounded-full shadow-2xl ${darkMode ? "translate-x-5":"translate-x-0"}`}></div>
         </div>
 
       </div>
@@ -128,7 +134,7 @@ const Sidebar = ({setShowForm}) => {
       <div className='flex justify-between items-center bg-violet-200 rounded-lg px-3 h-10 '>
         <div className=" flex justify-center items-center bg-violet-500 w-8 h-8 rounded-full shadow-2xl">A
         </div>
-        <span className="pr-4">Ayush Raj</span>
+        <span className={`pr-4 ${darkMode ? "text-gray-700":"text-black"}`}>Ayush Raj</span>
         <i className="ri-arrow-down-s-line"></i>
       </div>
 
