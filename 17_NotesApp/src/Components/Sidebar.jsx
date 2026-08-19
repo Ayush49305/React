@@ -9,7 +9,7 @@ const Sidebar = ({
   //const[color,setColor]=useState("white")
   
   return (
-    <div className={`h-[calc(100vh-90px)] w-[300px] p-3 ${darkMode ? "bg-gray-700 text-white min-h-screen":"bg-white text-black min-h-screen"}`}>
+    <div className={`h-[calc(100vh-90px)] w-[300px] p-3 ${darkMode ? "bg-gray-800 text-white min-h-screen":"bg-white text-black min-h-screen"}`}>
       <div className='flex items-center gap-2 mb-4'>
         <i className="ri-booklet-line text-2xl bg-violet-600 h-10 max-w-1 pl-5 pr-5 flex justify-center items-center outline-none rounded-lg"></i>
         <h2 className='text-xl font-semibold text-gray-800'>Notes App</h2>
@@ -66,10 +66,10 @@ const Sidebar = ({
         
       </div>
 
-      <div className={`flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10 ${darkMode ? "text-white":"text-black"}`}>
-        <div className='flex items-center gap-3'>
-          <i className="ri-user-line text-xl text-black"></i>
-          <span className='text-sm font-medium text-black'>Personal</span>
+      <div className="flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10 ">
+        <div className={`flex items-center gap-3 ${darkMode ? "text-white":"text-black"}`}>
+          <i className="ri-user-line text-xl"></i>
+          <span className='text-sm font-medium'>Personal</span>
         </div>
 
         <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>1</span>

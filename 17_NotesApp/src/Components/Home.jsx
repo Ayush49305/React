@@ -137,10 +137,11 @@ const Home = ({
   setShowForm(false)
 }
   return (
-    <div className={`flex-1 grid p-5 ${darkMode ? "bg-gray-700 text-white ":"bg-white text-black "}`}>
+    <div className={`flex-1 grid p-5 ${darkMode ? "bg-gray-800 text-white ":"bg-white text-black "}`}>
       {showForm && (
         <Form
-          
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
           title={title}
           setTitle={setTitle}
           content={content}
@@ -148,6 +149,7 @@ const Home = ({
           category={category}
           setCategory={setCategory}
           handleAddNote={handleAddNote}
+          setShowForm={setShowForm}
         />
       )}
       <div className='grid grid-cols-4 p-4'>

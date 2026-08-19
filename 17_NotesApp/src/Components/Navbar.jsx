@@ -6,7 +6,7 @@ const Navbar = ({
   setDarkMode
 }) => {
   return (
-    <div className={`flex justify-between items-center h-[90px] w-screen border-black ${darkMode ? "bg-gray-700 text-white ":"bg-white text-black "}`}>
+    <div className={`flex justify-between items-center h-[90px] w-screen border-black ${darkMode ? "bg-gray-800 text-white ":"bg-white text-black "}`}>
       <div className='pl-5'>
         <h2 className='text-4xl'>Welcome,Ayush</h2>  
         {/* <p className='mt-1'>12 notes</p> */}

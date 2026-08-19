@@ -7,11 +7,24 @@ import React from 'react'
       setContent,
       category,
       setCategory,
-      handleAddNote
+      handleAddNote,
+      darkMode,
+      setDarkMode,
+      setShowForm
     }) => {
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 ">
-        <div className='bg-white w-[500px] rounded-2xl p-6 shadow-2xl'>
+        
+        <div className={`w-[500px] rounded-2xl p-6 shadow-2xl ${darkMode ? "bg-gray-600 text-white":"bg-white text-black "}`}>
+            <button 
+                onClick={()=>{
+                    setTitle(""),
+                    setContent(""),
+                    setCategory(""),
+                    setShowForm(false)
+
+                }}
+                className="ml-110 text-lg">X</button>
 
             <h2 className="text-2xl font-semibold text-gray-800 mb-5">
                 Create New Note
