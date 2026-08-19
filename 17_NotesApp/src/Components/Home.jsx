@@ -6,7 +6,8 @@ const Home = ({
   showForm,
   setShowForm,
   darkMode,
-  setDarkMode
+  setDarkMode,
+  search
 }) => {
 
   
@@ -136,6 +137,11 @@ const Home = ({
 
   setShowForm(false)
 }
+
+  const filteredNotes = notes.filter((note) =>
+  (note.title || "").toLowerCase().includes((search || "").toLowerCase())
+)
+
   return (
     <div className={`flex-1 grid p-5 ${darkMode ? "bg-gray-800 text-white ":"bg-white text-black "}`}>
       {showForm && (
@@ -153,17 +159,27 @@ const Home = ({
         />
       )}
       <div className='grid grid-cols-4 p-4'>
-        {notes.map((note,index)=>(
-          <NoteCard
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            key={index}
-            title={note.title}
-            content={note.content}
-            category={note.category}
-            date={note.date}
-          />
-        ))}
+        {filteredNotes.length === 0 ? (
+          <div className="col-span-4 flex justify-center items-center h-40">
+            <p className={`text-lg font-medium ${
+              darkMode ? "text-white" : "text-gray-600"
+            }`}>
+              No results found
+            </p>
+          </div>
+        ) : (
+          filteredNotes.map((note, index) => (
+            <NoteCard 
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+              key={index}
+              title={note.title}
+              content={note.content}
+              category={note.category}
+              date={note.date}
+            />
+          ))
+        )}
       </div>
     </div>
   )

@@ -3,7 +3,10 @@ import 'remixicon/fonts/remixicon.css'
 
 const Navbar = ({
   darkMode,
-  setDarkMode
+  setDarkMode,
+  search,
+  setSearch
+  
 }) => {
   return (
     <div className={`flex justify-between items-center h-[90px] w-screen border-black ${darkMode ? "bg-gray-800 text-white ":"bg-white text-black "}`}>
@@ -20,6 +23,8 @@ const Navbar = ({
         <i className="ri-search-line absolute left-3 text-gray-500"></i>
         <input 
           type='text' 
+          value={search}
+          onChange={(e)=>setSearch(e.target.value)}
           placeholder='Search Notes...'
           className={`border border-gray-500  h-10 w-80 pl-10 pr-4 outline-none rounded-lg ${darkMode ? "bg-gray-700 text-white  placeholder-white":"bg-white text-black placeholder-gray-500"}`}>       
         </input>

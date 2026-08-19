@@ -9,12 +9,15 @@ import Home from './Components/Home'
 const App = () => {
   const [showForm,setShowForm]=useState(false)
   const[darkMode,setDarkMode]=useState(false)
+  const[search,setSearch]=useState("")
   return (
     <div className={darkMode ? "bg-gray-700 text-white min-h-sceen":"bg-white text-black min-h-screen"}>
 
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
+        search={search}
+        setSearch={setSearch}
       />
       <div className={`flex ${darkMode ? "bg-gray-900 text-white":"bg-white text-black"}`}>
         <Sidebar 
@@ -27,6 +30,7 @@ const App = () => {
           setShowForm={setShowForm}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
+          search={search}
         />
       </div>
     </div>

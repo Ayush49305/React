@@ -76,36 +76,36 @@ const Sidebar = ({
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
-        <div className='flex items-center gap-3'>
+        <div className={`flex items-center gap-3 ${darkMode ? "text-white":"text-black"}`}>
           <i className="ri-computer-line text-xl text-black"></i>
-          <span className='text-sm font-medium text-black'>Work</span>
+          <span className='text-sm font-medium'>Work</span>
         </div>
 
         <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>3</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
-        <div className='flex items-center gap-3'>
-          <i className="ri-book-line text-xl text-black"></i>
-          <span className='text-sm font-medium text-black'>Study</span>
+        <div className={`flex items-center gap-3 ${darkMode ? "text-white":"text-black"}`}>
+          <i className="ri-book-line text-xl"></i>
+          <span className='text-sm font-medium'>Study</span>
         </div>
 
         <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>4</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
-        <div className='flex items-center gap-3'>
-          <i className="ri-lightbulb-fill text-xl text-black"></i>
-          <span className='text-sm font-medium text-black'>ideas</span>
+        <div className={`flex items-center gap-3 ${darkMode ? "text-white":"text-black"}`}>
+          <i className="ri-lightbulb-fill text-xl"></i>
+          <span className='text-sm font-medium'>ideas</span>
         </div>
 
         <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>2</span>
       </div>
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10 mb-10'>
-        <div className='flex items-center gap-3'>
-          <i className="ri-outlet-line text-xl text-black"></i>
-          <span className='text-sm font-medium text-black'>Others</span>
+        <div className={`flex items-center gap-3 ${darkMode ? "text-white":"text-black"}`}>
+          <i className="ri-outlet-line text-xl"></i>
+          <span className='text-sm font-medium'>Others</span>
         </div>
 
         <span className='bg-violet-50 text-violet-800 text-xs font-semibold rounded-full px-2 py-1'>1</span>
@@ -134,8 +134,8 @@ const Sidebar = ({
       <div className='flex justify-between items-center bg-violet-200 rounded-lg px-3 h-10 '>
         <div className=" flex justify-center items-center bg-violet-500 w-8 h-8 rounded-full shadow-2xl">A
         </div>
-        <span className={`pr-4 ${darkMode ? "text-gray-700":"text-black"}`}>Ayush Raj</span>
-        <i className="ri-arrow-down-s-line"></i>
+        <span className={`pr-4 ${darkMode ? "text-black":"text-black"}`}>Ayush Raj</span>
+        <i className="ri-arrow-down-s-line text-black"></i>
       </div>
 
     </div>
