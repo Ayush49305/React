@@ -26,6 +26,7 @@ const Home = ({
       ],
       category:"Ideas",
       date:"August 12, 2026 • 10:30 AM",
+      pinned:false
     },
 
      {
@@ -39,6 +40,7 @@ const Home = ({
     ],
     category: "Study",
     date: "August 12, 2026 • 09:15 AM",
+    pinned:false
   },
 
   {
@@ -51,6 +53,7 @@ const Home = ({
     ],
     category: "Personal",
     date: "August 11, 2026 • 08:45 PM",
+    pinned:false
   },
 
   {
@@ -63,6 +66,7 @@ const Home = ({
     ],
     category: "Work",
     date: "August 11, 2026 • 04:20 PM",
+    pinned:false
   },
 
   {
@@ -76,6 +80,7 @@ const Home = ({
     ],
     category: "Personal",
     date: "August 11, 2026 • 11:30 AM",
+    pinned:false
   },
 
   {
@@ -88,6 +93,7 @@ const Home = ({
     ],
     category: "Study",
     date: "August 10, 2026 • 07:10 PM",
+    pinned:false
   },
 
   {
@@ -100,6 +106,7 @@ const Home = ({
     ],
     category: "Ideas",
     date: "August 10, 2026 • 02:45 PM",
+    pinned:false
   },
 
   {
@@ -112,6 +119,7 @@ const Home = ({
     ],
     category: "Personal",
     date: "August 09, 2026 • 06:30 PM",
+    pinned:false
   },
 
   ])

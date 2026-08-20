@@ -5,7 +5,9 @@ const NoteCard = ({title,content,category,date,darkMode,setDarkMode}) => {
   return (
     <div className={`h-70 w-60 p-4 m-6 rounded-2xl ${darkMode ? "bg-gray-900 text-white":"bg-violet-50 text-black"}`}>
       <div className='flex justify-between mb-2'>
-         <i className="ri-pushpin-2-fill text-2xl"></i>
+         <i
+          onClick={()=>} 
+          className="ri-pushpin-2-fill text-2xl"></i>
          <i className="ri-more-2-line font-bold text-1xl"></i>
       </div>
 

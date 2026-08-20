@@ -77,7 +77,7 @@ const Sidebar = ({
 
       <div className='flex items-center justify-between bg-voilet-50 rounded-lg px-3 h-10'>
         <div className={`flex items-center gap-3 ${darkMode ? "text-white":"text-black"}`}>
-          <i className="ri-computer-line text-xl text-black"></i>
+          <i className="ri-computer-line text-xl"></i>
           <span className='text-sm font-medium'>Work</span>
         </div>
 
