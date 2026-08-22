@@ -1,13 +1,13 @@
 import React from 'react'
 // import Home from './Home'
 
-const NoteCard = ({title,content,category,date,darkMode,setDarkMode}) => {
+const NoteCard = ({title,content,category,date,darkMode,setDarkMode,pinned,onPin}) => {
   return (
     <div className={`h-70 w-60 p-4 m-6 rounded-2xl ${darkMode ? "bg-gray-900 text-white":"bg-violet-50 text-black"}`}>
       <div className='flex justify-between mb-2'>
          <i
-          onClick={()=>} 
-          className="ri-pushpin-2-fill text-2xl"></i>
+          onClick={onPin} 
+          className={`ri-pushpin-2-fill text-2xl ${pinned ? "text-violet-600":"text-gray-400"}`}></i>
          <i className="ri-more-2-line font-bold text-1xl"></i>
       </div>
 

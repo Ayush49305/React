@@ -26,7 +26,7 @@ const Home = ({
       ],
       category:"Ideas",
       date:"August 12, 2026 • 10:30 AM",
-      pinned:false
+      pinned:false,
     },
 
      {
@@ -40,7 +40,7 @@ const Home = ({
     ],
     category: "Study",
     date: "August 12, 2026 • 09:15 AM",
-    pinned:false
+    pinned:false,
   },
 
   {
@@ -53,7 +53,7 @@ const Home = ({
     ],
     category: "Personal",
     date: "August 11, 2026 • 08:45 PM",
-    pinned:false
+    pinned:false,
   },
 
   {
@@ -66,7 +66,7 @@ const Home = ({
     ],
     category: "Work",
     date: "August 11, 2026 • 04:20 PM",
-    pinned:false
+    pinned:false,
   },
 
   {
@@ -80,7 +80,7 @@ const Home = ({
     ],
     category: "Personal",
     date: "August 11, 2026 • 11:30 AM",
-    pinned:false
+    pinned:false,
   },
 
   {
@@ -93,7 +93,7 @@ const Home = ({
     ],
     category: "Study",
     date: "August 10, 2026 • 07:10 PM",
-    pinned:false
+    pinned:false,
   },
 
   {
@@ -106,7 +106,7 @@ const Home = ({
     ],
     category: "Ideas",
     date: "August 10, 2026 • 02:45 PM",
-    pinned:false
+    pinned:false,
   },
 
   {
@@ -119,7 +119,7 @@ const Home = ({
     ],
     category: "Personal",
     date: "August 09, 2026 • 06:30 PM",
-    pinned:false
+    pinned:false,
   },
 
   ])
@@ -130,12 +130,18 @@ const Home = ({
     return
   }
 
+  
+
+
   const newNote = {
     title: title,
     content: content.split("\n").filter(item => item.trim() !== ""),
     category: category,
-    date: new Date().toLocaleString()
+    date: new Date().toLocaleString(),
+    pinned:false
   }
+
+  
 
   setNotes([newNote, ...notes])
 
@@ -144,6 +150,16 @@ const Home = ({
   setCategory("")
 
   setShowForm(false)
+}
+
+const handlePinNote = (index) => {
+  setNotes(
+    notes.map((note, i) =>
+      i === index
+        ? { ...note, pinned: !note.pinned }
+        : note
+    )
+  )
 }
 
   const filteredNotes = notes.filter((note) =>
@@ -185,6 +201,8 @@ const Home = ({
               content={note.content}
               category={note.category}
               date={note.date}
+              pinned={note.pinned}
+              onPin={()=>handlePinNote(index)}
             />
           ))
         )}
